@@ -4,7 +4,10 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
+import {HttpClientModule} from '@angular/common/http';
+
 import { HomePageRoutingModule } from './home-routing.module';
+import { ApiService } from '../service/api.service';
 
 
 @NgModule({
@@ -12,8 +15,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers : [ApiService]
 })
 export class HomePageModule {}
