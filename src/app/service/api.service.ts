@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
+  private BASE_URL = 'https://rickandmortyapi.com/api';
+
   constructor(private http: HttpClient) { }
 
   public getCharacters(){
-    return this.http.get('https://rickandmortyapi.com/api/character')
+    return this.http.get(`${this.BASE_URL}/character`)
   }
 }

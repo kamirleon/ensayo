@@ -1,20 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
-    </ion-title>
+      Lista de Personajes    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Lista de Personajes</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- Card -->
+    <!-- <ion-row class="ion-margin-top" *ngFor="let p of personaje?.results">
+    <ion-col>
+      <ion-card>
+        <img src="{{p.image}}" alt="{{p.name}}" />
+  
+        <ion-card-header>
+          <ion-card-title>{{personaje?.name}}</ion-card-title>
+          <ion-card-subtitle>{{p.species}}</ion-card-subtitle>
+        </ion-card-header>
+  
+        <ion-card-content>
+          {{p.status}} - {{p.gender}} - {{p.origin.name}}
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row> -->
+    <ion-list>
+      <ion-item *ngFor="let personaje of personaje?.results">
+        {{ personaje.name }}
+        <button type="button" (click)="detalle(personaje)"> Ver </button> </ion-item>
+
+    </ion-list>
+
+
   </div>
 </ion-content>
